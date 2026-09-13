@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "legalbedrockcosmos",
+  "version": "1.3.0",
+  "minecraft_versions": [
+    "1.26.45.1"
+  ],
+  "info": {
+    "name": "Legal Bedrock Cosmos",
+    "author": "zhyion071",
+    "description": "A native mod port of bedrock cosmos for LeviLaunchroid, but without the capes unlocker.",
+    "homepage_url": "https://github.com/zhyion071/Legal-Bedrock-Cosmos/",
+    "icon": "assets/icon.png",
+    "tags": [
+      "Cosmetic"
+    ]
+  },
+  "release_assets": {
+    "include": [
+      "*.levipack",
+      "*.so"
+    ],
+    "labels": {
+      "LegalBedrockCosmos.levipack": "LeviPack",
+      "libLegalBedrockCosmos.so": "Native library"
+    }
+  }
+}
