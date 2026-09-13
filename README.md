@@ -1,84 +1,190 @@
 # LeviModHub
 
-LeviModHub is the mod list used by LeviLauncher.
+LeviModHub is the external mod catalog used by LeviLauncher on Android.
 
-## Add a mod
+Mods can still use the old manual catalog format. Mods can also use automatic updates through GitHub Releases or through a stable `levimod.json` URL.
 
-1. Fork this repository.
-2. Create `mods/your-mod-id/mod.json`.
-3. Optionally add a square `icon.png` in the same folder, or use an HTTPS `icon_url`.
-4. Open a pull request.
+## GitHub Releases
 
-Use lowercase letters, numbers, dots, dashes, or underscores for the folder name and `id`. The folder name and `id` must match.
+For mods that publish files through GitHub Releases, add a `levimod.json` file to the root of the mod repository.
+
+A working example can be found here:
+
+[QYCottage/BedrockTools - levimod.json](https://github.com/QYCottage/BedrockTools/blob/main/levimod.json)
+
+Example:
+
+```json
+{
+  "schema_version": 1,
+  "id": "your-mod-id",
+  "version": "1.0.0",
+  "minecraft_versions": [
+    "1.26.45.1"
+  ],
+  "info": {
+    "name": "Your Mod",
+    "author": "Your Name",
+    "description": "A short description of your mod.",
+    "homepage_url": "https://github.com/you/your-mod",
+    "icon": "assets/icon.png",
+    "tags": [
+      "Utility"
+    ]
+  },
+  "release_assets": {
+    "include": [
+      "*.levipack",
+      "*.so"
+    ],
+    "labels": {
+      "YourMod.levipack": "LeviPack",
+      "libYourMod.so": "Native library"
+    }
+  }
+}
+```
+
+Then add this to LeviModHub:
+
+```text
+mods/your-mod-id/mod.json
+```
 
 ```json
 {
   "id": "your-mod-id",
-  "name": "Your Mod",
-  "author": "Your Name",
-  "description": "A short explanation of what the mod does.",
-  "homepage_url": "https://github.com/you/your-mod",
-  "tags": ["Utility", "HUD"],
-  "releases": [
-    {
-      "version": "1.0.0",
-      "minecraft_versions": ["1.26.45.1", "1.26.5X.X"],
-      "download_type": "direct",
-      "download_url": "https://github.com/you/your-mod/releases/download/v1.0.0/YourMod.levipack",
-      "published_at": "2026-09-10T12:00:00Z"
-    }
-  ]
+  "provider": "github",
+  "repository": "you/your-mod",
+  "metadata_path": "levimod.json",
+  "include_prereleases": false,
+  "max_releases": 20,
+  "enabled": true
 }
 ```
 
-Add `icon_url` if the icon is hosted elsewhere:
+After the mod is accepted, future GitHub releases are picked up automatically.
+
+## Custom download links
+
+Mods that use MediaFire, a website, a CDN, or another download service can also update automatically.
+
+The important part is that the `levimod.json` URL stays the same. The actual download link inside it can change every release.
+
+A simple way to do this is to keep `levimod.json` in the mod's GitHub repository, even if the mod file itself is hosted somewhere else.
+
+Example:
 
 ```json
-"icon_url": "https://example.com/your-mod.png"
+{
+  "schema_version": 1,
+  "id": "your-mod-id",
+  "version": "2.0.0",
+  "minecraft_versions": [
+    "1.26.45.1"
+  ],
+  "published_at": "2026-09-13T00:00:00Z",
+  "info": {
+    "name": "Your Mod",
+    "author": "Your Name",
+    "description": "A short description of your mod.",
+    "homepage_url": "https://github.com/you/your-mod",
+    "tags": [
+      "Utility"
+    ]
+  },
+  "download": {
+    "type": "browser",
+    "url": "https://example.com/your-new-download-link"
+  }
+}
 ```
 
-If neither `icon.png` nor `icon_url` is provided, LeviLauncher uses its own logo.
+Then add this to LeviModHub:
+
+```json
+{
+  "id": "your-mod-id",
+  "provider": "url",
+  "metadata_url": "https://raw.githubusercontent.com/you/your-mod/main/levimod.json",
+  "max_releases": 20,
+  "enabled": true
+}
+```
+
+For a page such as MediaFire, use:
+
+```json
+"type": "browser"
+```
+
+For a direct `.levipack`, `.so`, or `.zip` URL, use:
+
+```json
+"download": {
+  "type": "direct",
+  "url": "https://example.com/YourMod.levipack"
+}
+```
+
+If a direct URL does not end with the real file name, add `name`:
+
+```json
+"download": {
+  "type": "direct",
+  "url": "https://example.com/download?id=123",
+  "name": "YourMod.levipack"
+}
+```
+
+When releasing a new version, only update the mod's own `levimod.json`:
+
+- `version`
+- `minecraft_versions`
+- `published_at`
+- `download.url`
+
+LeviModHub checks the metadata automatically. No new LeviModHub pull request is needed for normal updates.
+
+Previously published versions are kept from the existing catalog, up to `max_releases`.
 
 ## Minecraft versions
 
-List every Minecraft version supported by a release. Exact versions are safest:
+Use an exact Minecraft version:
 
 ```json
-"minecraft_versions": ["1.26.45.1", "1.26.50.2"]
+"minecraft_versions": [
+  "1.26.45.1"
+]
 ```
 
-Use `X` when the same build is known to work across a hotfix family:
+Multiple versions can be listed:
 
 ```json
-"minecraft_versions": ["1.26.5X.X"]
+"minecraft_versions": [
+  "1.26.45.1",
+  "1.26.50.2"
+]
 ```
 
-`1.26.5X.X` matches versions from `1.26.50.0` through `1.26.59.X`. An `X` inside a number matches one digit, while an `X` used as the whole section matches any numeric value.
-
-When Minecraft updates and the mod needs a new build, add a new item at the top of `releases`. Keep old releases so players using older Minecraft versions can still install the correct one.
-
-## Downloads
-
-Use `direct` for a direct `.levipack`, `.zip`, or `.so` link. LeviLauncher downloads and imports it inside the app.
-
-Use `browser` when the developer needs people to visit a download page:
+`X` can be used for a compatible range:
 
 ```json
-"download_type": "browser",
-"download_url": "https://your-site.example/download"
+"minecraft_versions": [
+  "1.26.5X.X"
+]
 ```
 
-Use `ad` when the download page is supported by ads:
+`>=` can be used when a mod supports one version and every newer version:
 
 ```json
-"download_type": "ad",
-"download_url": "https://your-link.example/download"
+"minecraft_versions": [
+  ">=1.26.45.1"
+]
 ```
 
-The launcher labels the download type and explains the steps before opening an external page. After downloading, the player returns to the Mods page and taps **Scan**. Scan checks the main Downloads folder for `.levipack` and `.so` files.
+## Existing mods
 
-## What happens after a pull request
+The old manual `mod.json` format is still supported.
 
-The catalog check reads every `mods/*/mod.json` file and rejects missing fields, invalid links, or invalid download types. After a pull request is merged, GitHub Actions generates the catalog and publishes it through GitHub Pages. The generated catalog is not stored in the repository.
-
-LeviLauncher fetches `https://qycottage.github.io/LeviModHub/catalog.json` when the External Mods page opens.
+Developers can move to either `provider: "github"` or `provider: "url"` when they are ready.

@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -23,6 +25,10 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/build_catalog.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CATALOG_FALLBACK_URL: https://qycottage.github.io/LeviModHub/catalog.json
+          HUB_RAW_BASE: https://raw.githubusercontent.com/QYCottage/LeviModHub/main
       - if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v6
       - if: github.event_name != 'pull_request'

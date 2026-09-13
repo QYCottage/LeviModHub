@@ -1,0 +1,22 @@
+{
+  "id": "itempickuppreview",
+  "name": "Item Pickup Preview",
+  "author": "FRUTYDIE",
+  "description": "an advance item pickup gui with customization",
+  "icon_url": "https://raw.githubusercontent.com/frutydie/Mods/refs/heads/main/itempickuppreview/icon.png",
+  "tags": [
+    "visuals",
+    "gui"
+  ],
+  "releases": [
+    {
+      "version": "1.1.0",
+      "minecraft_versions": [
+        "1.26.45.1"
+      ],
+      "download_type": "direct",
+      "download_url": "https://github.com/frutydie/Mods/releases/download/Mod/ItemPickupPreview-1.1.0.levipack",
+      "published_at": "2026-09-12T04:46:17Z"
+    }
+  ]
+}

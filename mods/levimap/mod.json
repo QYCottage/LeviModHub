@@ -1,21 +1,7 @@
 {
   "id": "levimap",
-  "name": "LeviMap",
-  "author": "DreamGuXiang",
-  "description": "A native minimap for Minecraft Bedrock on Android. It displays nearby terrain on the HUD and stores map data separately for each world and dimension, making exploration, navigation, and waypoint management easier.",
-  "tags": [
-    "Utility",
-    "Map"
-  ],
-  "releases": [
-    {
-      "version": "1.1.1",
-      "minecraft_versions": [
-        "1.26.45.1"
-      ],
-      "download_type": "ad",
-      "download_url": "https://direct-link.net/6370169/I5SIIapMWwOy",
-      "published_at": "2026-09-11T00:00:00Z"
-    }
-  ]
+  "provider": "url",
+  "metadata_url": "https://raw.githubusercontent.com/QYCottage/LeviMap-Releases/main/levimod.json",
+  "max_releases": 20,
+  "enabled": true
 }

@@ -1,21 +1,7 @@
 {
   "id": "betterresourcepackmanager",
-  "name": "BetterResourcePackManager",
-  "author": "DreamGuXiang",
-  "description": "An in-game texture and resource pack changer.",
-  "tags": [
-    "Utility",
-    "Resource Packs"
-  ],
-  "releases": [
-    {
-      "version": "2.2.1",
-      "minecraft_versions": [
-        "1.26.45.1"
-      ],
-      "download_type": "browser",
-      "download_url": "https://www.mediafire.com/file/qy7znvy50vc55pz/BetterResourcePackManager.levipack/file",
-      "published_at": "2026-09-11T00:00:00Z"
-    }
-  ]
+  "provider": "url",
+  "metadata_url": "https://raw.githubusercontent.com/QYCottage/BetterResourcePackManager-Release/main/levimod.json",
+  "max_releases": 20,
+  "enabled": true
 }

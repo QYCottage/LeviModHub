@@ -1,24 +1,10 @@
 {
   "id": "bedrocktools",
-  "name": "BedrockTools",
-  "author": "MrPokeG",
-  "description": "A collection of utility, HUD, player, and visual modules for Minecraft Bedrock.",
-  "icon_url": "https://raw.githubusercontent.com/QYCottage/BedrockTools/main/assets/bedrocktools.png",
-  "homepage_url": "https://github.com/QYCottage/BedrockTools",
-  "tags": [
-    "Utility",
-    "HUD",
-    "Visual"
-  ],
-  "releases": [
-    {
-      "version": "1.4.9",
-      "minecraft_versions": [
-        "1.26.45.1"
-      ],
-      "download_type": "direct",
-      "download_url": "https://github.com/QYCottage/BedrockTools/releases/download/v1.4.9/BedrockTools.levipack",
-      "published_at": "2026-09-08T23:11:16Z"
-    }
-  ]
+  "provider": "github",
+  "repository": "QYCottage/BedrockTools",
+  "metadata_path": "levimod.json",
+  "bootstrap_ref": "main",
+  "include_prereleases": false,
+  "max_releases": 20,
+  "enabled": true
 }
