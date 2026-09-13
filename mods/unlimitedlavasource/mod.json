@@ -1,0 +1,10 @@
+{
+  "id": "uls",
+  "provider": "github",
+  "repository": "Viablecobra/UnlimitedLavaSource",
+  "metadata_path": "levimod.json",
+  "bootstrap_ref": "main",
+  "include_prereleases": false,
+  "max_releases": 20,
+  "enabled": true
+}
