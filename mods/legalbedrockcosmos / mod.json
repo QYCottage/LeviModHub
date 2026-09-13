@@ -1,7 +1,10 @@
 {
   "id": "legalbedrockcosmos",
-  "provider": "url",
-  "metadata_url": "https://github.com/zhyion071/Legal-Bedrock-Cosmos/releases/download/1.3.0/LegalBedrockCosmos.levipack",
+  "provider": "github",
+  "repository": "QYCottage/Legal-Bedrock-Cosmos",
+  "metadata_path": "levimod.json",
+  "bootstrap_ref": "main",
+  "include_prereleases": false,
   "max_releases": 20,
   "enabled": true
 }
