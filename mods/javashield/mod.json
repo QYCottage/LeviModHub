@@ -1,0 +1,7 @@
+{
+  "id": "javashield",
+  "provider": "url",
+  "metadata_url": "https://dl.nexcaise.my.id/files/JavaShield-levimod.json",
+  "max_releases": 20,
+  "enabled": true
+}
