@@ -1,8 +1,9 @@
 {
   "id": "legalbedrockcosmos",
   "provider": "github",
-  "repository": "QYCottage/Legal-Bedrock-Cosmos",
+  "repository": "zhyion071/Legal-Bedrock-Cosmos",
   "metadata_path": "levimod.json",
+  "metadata_url": "https://github.com/zhyion071/Legal-Bedrock-Cosmos/",
   "bootstrap_ref": "main",
   "include_prereleases": false,
   "max_releases": 20,
