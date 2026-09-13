@@ -1,0 +1,10 @@
+{
+  "id": "materialbinloader",
+  "provider": "github",
+  "repository": "leviandroidmods/fusembl2",
+  "metadata_path": "levimod.json",
+  "bootstrap_ref": "master",
+  "include_prereleases": false,
+  "max_releases": 20,
+  "enabled": true
+}
