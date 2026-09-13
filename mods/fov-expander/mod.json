@@ -1,0 +1,7 @@
+{
+  "id": "fov-expander",
+  "provider": "url",
+  "metadata_url": "https://raw.githubusercontent.com/strv1hax/FovExpander-/main/levimod.json",
+  "max_releases": 20,
+  "enabled": true
+}
