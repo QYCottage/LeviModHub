@@ -1,0 +1,11 @@
+{
+  "id": "remove_bed_range_limit",
+  "provider": "github",
+  "repository": "RealBatu20/RemoveBedRangeLimit-MCPE_MOD",
+  "metadata_path": "levimod.json",
+  "tag_prefix": "v",
+  "bootstrap_ref": "main",
+  "include_prereleases": true,
+  "max_releases": 20,
+  "enabled": true
+}
