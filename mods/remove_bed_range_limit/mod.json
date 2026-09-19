@@ -7,5 +7,5 @@
   "bootstrap_ref": "main",
   "include_prereleases": true,
   "max_releases": 20,
-  "enabled": true
+  "enabled": false
 }
