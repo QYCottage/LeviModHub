@@ -1,0 +1,7 @@
+{
+  "id": "SimpleNote",
+  "provider": "url",
+  "metadata_url": "https://raw.githubusercontent.com/strv1hax/SimpleNote/main/levimod.json",
+  "max_releases": 20,
+  "enabled": true
+}
