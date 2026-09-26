@@ -1,0 +1,10 @@
+{
+  "id": "anarchyarray",
+  "provider": "github",
+  "repository": "TANGY009/AnarchyArray",
+  "metadata_path": "levimod.json",
+  "bootstrap_ref": "main",
+  "include_prereleases": false,
+  "max_releases": 20,
+  "enabled": true
+}
