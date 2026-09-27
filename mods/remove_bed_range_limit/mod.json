@@ -4,8 +4,8 @@
   "repository": "RealBatu20/RemoveBedRangeLimit-MCPE_MOD",
   "metadata_path": "levimod.json",
   "tag_prefix": "v",
-  "bootstrap_ref": "main",
+  "bootstrap_ref": "fix/invalid-levimod.json",
   "include_prereleases": true,
   "max_releases": 20,
-  "enabled": false
+  "enabled": true
 }
