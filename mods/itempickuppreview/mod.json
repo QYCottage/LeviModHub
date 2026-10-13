@@ -10,13 +10,13 @@
   ],
   "releases": [
     {
-      "version": "1.2.0",
+      "version": "1.2.1",
       "minecraft_versions": [
         "1.26.52.3"
       ],
       "download_type": "direct",
-      "download_url": "https://github.com/frutydie/Mods/releases/download/Mod-0.2/ItemPickupPreview-1.2.0.levipack",
-      "published_at": "2026-10-04T05:14:56Z"
+      "download_url": "https://github.com/frutydie/Mods/releases/download/Mod-0.3/ItemPickupPreview-1.2.1.levipack",
+      "published_at": "2026-10-13T08:54:56Z"
     }
   ]
 }
