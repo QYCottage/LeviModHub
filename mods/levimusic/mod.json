@@ -1,0 +1,10 @@
+{
+  "id": "levimusic",
+  "provider": "github",
+  "repository": "TerserahGw/levimusic-android",
+  "metadata_path": "levimod.json",
+  "bootstrap_ref": "main",
+  "include_prereleases": false,
+  "max_releases": 20,
+  "enabled": true
+}
